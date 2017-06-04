@@ -94,7 +94,7 @@ public class MultiValueMap<K, V> implements Map<K, V>, Serializable {
         this.internalMap.clear();
     }
     
-    public boolean remove(final K key, final V value) {
+    public boolean clean(final K key, final V value) {
         if (this.internalMap.containsKey(key)) { return this.internalMap.get(key)
                 .remove(value); }
         return false;

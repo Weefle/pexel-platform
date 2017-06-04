@@ -75,25 +75,22 @@ public class Kit {
      */
     public void applyKit(final Player player) {
         player.getInventory().clear();
+        player.getInventory().setHelmet(null);
+        player.getInventory().setChestplate(null);
+        player.getInventory().setLeggings(null);
+        player.getInventory().setBoots(null);
         
-        //TODO: DEBUKKITIZE:
-        //FIX: If kit contains no armor, the armor from previous kit would be preserved.
-        //player.getInventory().setHelmet(null);
-        //player.getInventory().setChestplate(null);
-        //player.getInventory().setLeggings(null);
-        //player.getInventory().setBoots(null);
+        if (this.helmet != null)
+        player.getInventory().setHelmet(this.helmet);
+        if (this.chestplate != null)
+        player.getInventory().setChestplate(this.chestplate);
+        if (this.leggings != null)
+        player.getInventory().setLeggings(this.leggings);
+        if (this.boots != null)
+        player.getInventory().setBoots(this.boots);
         
-        //if (this.helmet != null)
-        //player.getInventory().setHelmet(this.helmet);
-        //if (this.chestplate != null)
-        //player.getInventory().setChestplate(this.chestplate);
-        //if (this.leggings != null)
-        //player.getInventory().setLeggings(this.leggings);
-        //if (this.boots != null)
-        //player.getInventory().setBoots(this.boots);
-        
-        //for (ItemStack itemstack : this.items)
-        //    player.getInventory().addItem(itemstack);
+        for (ItemStack itemstack : this.items)
+            player.getInventory().addItem(itemstack);
     }
     
     /**
